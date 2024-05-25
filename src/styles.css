@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .sidebar {
+    min-width: 250px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px 0px 20px 0px;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+.right-side{
+  margin-left: 5%;
+}
+
+.addnewproduct-form{
+  max-width: 50%;
+}
+
+.nav-link {
+  color:black;
+  width: 100%;
+  border-radius: 0;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  padding: 10px 15px;
+  display: inline-block;
+  height: 46px;
+}
+
+.nav-link:hover {
+  background-color: #f1f3f4;
+  color:black;
+}
+
+.nav-link.active {
+  background-color: rgb(254, 239, 195);
+  color:black;
+}
+
+.nav-header-logant{
+  font-family: 'Poetsen One', cursive;
+  font-size:2em;
+  padding: 20px;
+}
+
+.routelink{
+  padding-left: 20px;
+}
+
+
+.product-list-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}

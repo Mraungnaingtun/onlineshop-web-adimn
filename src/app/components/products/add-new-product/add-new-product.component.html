@@ -1,0 +1,38 @@
+<div class="addnewproduct-body">
+    <div class="addnewproduct-form">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Add New Product</h5>
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label for="productName" class="form-label">Product Name</label>
+                        <input type="text" class="form-control" id="productName" [(ngModel)]="product.name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="productDescription" [(ngModel)]="product.description" name="description" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productPrice" class="form-label">Price</label>
+                        <input type="number" class="form-control" id="productPrice" [(ngModel)]="product.price" name="price" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="stockQuantity" class="form-label">Stock Quantity</label>
+                        <input type="number" class="form-control" id="stockQuantity" [(ngModel)]="product.stockQuantity" name="stockQuantity" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="categoryId" class="form-label">Category ID</label>
+                        <input type="number" class="form-control" id="categoryId" [(ngModel)]="product.categoryId" name="categoryId" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="brandId" class="form-label">Brand ID</label>
+                        <input type="number" class="form-control" id="brandId" [(ngModel)]="product.brandId" name="brandId" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
