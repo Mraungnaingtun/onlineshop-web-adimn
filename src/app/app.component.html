@@ -7,11 +7,10 @@
                         <div class="nav-header-logant">Shoppee</div>
                     </div>
                     <div class="nav flex-column">
-                        <div *ngFor="let item of navItems" (click)="handleItemClick(item)">
-                            <div [ngClass]="{ 'nav-link': true, 'active': item.selected }">
-                                <div class="routelink" [routerLink]="item.route">{{ item.name }}</div>
-                            </div>
-                        </div>
+                        <a *ngFor="let item of navItems" class="nav-link" [routerLink]="item.route"
+                            routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                            {{ item.name }}
+                        </a>
                     </div>
 
                 </nav>

@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Product } from '../../../components/shared/models/product.model';
 import { ProductService } from '../../../components/shared/services/product.service';
+import { ListHeaderComponent } from '../../shared/reusable/list-header/list-header.component';
 
 
 @Component({
@@ -11,7 +12,9 @@ import { ProductService } from '../../../components/shared/services/product.serv
   imports: [
     RouterLink,
     CommonModule,
+    ListHeaderComponent,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
@@ -27,7 +30,11 @@ export class ProductListComponent {
     private router: Router,
   ) {
     
-  } 
+  }
+
+  ngDestroy(){
+    this.clearData();
+  }
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe(data => {
@@ -45,6 +52,10 @@ export class ProductListComponent {
 
   addProduct() {
     this.router.navigate(['/add-product']);
+  }
+
+  clearData(){
+    this.products = [];
   }
 
 }

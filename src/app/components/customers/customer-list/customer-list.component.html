@@ -1,0 +1,35 @@
+<div class="container">
+    <app-list-header [setTitle]="'Customer List'" [setLink]="'/add-customer'" [setButtonText]="'Add Customer'">
+    </app-list-header>
+
+    <table class="table"><script></script>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Address</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Actions</th> <!-- Added column for actions -->
+            </tr>
+        </thead>
+        <tbody>
+            @for (customer of customers; track customer.customerId) {
+            <tr>
+                <th scope="row">{{ customer.customerId }}</th>
+                <td>{{ customer.customername }}</td>
+                <td>{{ customer.email }}</td>
+                <td>{{ customer.phone }}</td>
+                <td>{{ customer.address }}</td>
+                <td>{{ customer.createdAt }}</td>
+                <td>
+                    <button (click)="editCustomer(customer.customerId)"
+                        class="btn btn-primary btn-sm me-2">Edit</button>
+                    <button (click)="deleteCustomer(customer.customerId)" class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

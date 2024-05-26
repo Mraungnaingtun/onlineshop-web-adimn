@@ -1,12 +1,12 @@
 <div class="container product-container">
-    <div class="product-list-title">
-        <h3>Product List</h3>
-        <a class="btn btn-primary" href="/add-product">Add Product</a>
-    </div>
+    <app-list-header [setTitle]="'Product List'" [setLink]="'/add-product'" [setButtonText]="'Add Product'">
+    </app-list-header>
+    @if (this.products.length > 0) {
     <div class="product-content">
         <div class="row">
-            <div class="col-6 col-md-4 col-lg-3 col-xl-3" *ngFor="let product of products">
-                <div class="card mb-3">
+            @for (product of products; track product.productId) {
+            <div class="col-6 col-md-4 col-lg-3 col-xl-3">
+                <div class="card mb-3 logant-product-card">
                     <div class="image-container">
                         <img class="card-img-top" [src]="image" alt="{{ product.name }}" />
                     </div>
@@ -16,6 +16,11 @@
                     </div>
                 </div>
             </div>
+            }
         </div>
     </div>
+    } @else {
+    <div class="no-data">No Data</div>
+    }
+
 </div>

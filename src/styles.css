@@ -27,7 +27,8 @@ html, body {
 }
 
 .nav-link {
-  color:black;
+  text-decoration: none;
+  color: #606977;
   width: 100%;
   border-radius: 0;
   border-bottom-right-radius: 50px;
@@ -35,6 +36,7 @@ html, body {
   padding: 10px 15px;
   display: inline-block;
   height: 46px;
+  font-weight:600;
 }
 
 .nav-link:hover {
@@ -43,9 +45,10 @@ html, body {
 }
 
 .nav-link.active {
-  background-color: rgb(254, 239, 195);
-  color:black;
+  background-color: #f1f3f4;
+  color: black;
 }
+
 
 .nav-header-logant{
   font-family: 'Poetsen One', cursive;
@@ -63,4 +66,14 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
+}
+
+.no-data{
+  text-align: center;
+  padding: 20px;
+  color: #c3bbbb;
+}
+
+.logant-product-card:hover{
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1),  0 4px 5px rgba(0, 0, 0, 0.1),  0 4px 5px rgba(0, 0, 0, 0.1),  0 4px 5px rgba(0, 0, 0, 0.1);
 }

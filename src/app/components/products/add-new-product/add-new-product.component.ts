@@ -33,7 +33,6 @@ export class AddNewProductComponent {
       },
       error: error => {
         console.error('Error creating product:', error);
-        // Handle error here
       }
     });
   }
